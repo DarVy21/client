@@ -10,7 +10,7 @@
       <TableView fx:id="table" layoutX="55.0" layoutY="39.0" prefHeight="200.0" prefWidth="393.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="144.66667556762695" text="Название" />
-          <TableColumn fx:id="amount" prefWidth="144.6666488647461" text="Количестов" />
+          <TableColumn fx:id="amount" prefWidth="144.6666488647461" text="Количество" />
             <TableColumn fx:id="price" prefWidth="104.0" text="Цена" />
         </columns>
       </TableView>

@@ -4,3 +4,4 @@
 # Datasource local storage ignored files
 /../../../../:\Java\client\.idea/dataSources/
 /dataSources.local.xml
+/dataSources/

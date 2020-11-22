@@ -1,5 +1,6 @@
 package Controller;
 
+import java.awt.print.Book;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -7,14 +8,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Entity.BasketEntity;
-import Entity.ProductEntity;
+import Entity.BookEntity;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ShowProductController {
+public class ShowBookController {
 
     @FXML
     private ResourceBundle resources;
@@ -23,25 +25,28 @@ public class ShowProductController {
     private URL location;
 
     @FXML
-    private TableView<ProductEntity> Product;
+    private TableView<BookEntity> Book;
 
     @FXML
-    private TableColumn<ProductEntity, Integer> id;
+    private TableColumn<BookEntity, Integer> id;
 
     @FXML
-    private TableColumn<ProductEntity, String> type;
+    private TableColumn<BookEntity, String> name;
 
     @FXML
-    private TableColumn<ProductEntity, String> name;
+    private TableColumn<BookEntity, String> author;
 
     @FXML
-    private TableColumn<ProductEntity, Double> price;
+    private TableColumn<BookEntity, String> type;
 
     @FXML
-    private TableColumn<ProductEntity, Integer> amount;
+    private TableColumn<BookEntity, Double> price;
 
     @FXML
-    private TextField TextFieldProductChoice;
+    private TableColumn<BookEntity, Integer> amount;
+
+    @FXML
+    private TextField TextFieldBookChoice;
 
     @FXML
     private Button AddToBasket;
@@ -54,23 +59,26 @@ public class ShowProductController {
     void initialize() {
         try {
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
-            ObservableList<ProductEntity> products = FXCollections.observableArrayList();
+            ObservableList<BookEntity> books = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
-                ProductEntity product=new ProductEntity();
-                String[] infoString = list.get(i).split(" ", 5);
-                product.setId_product(Integer.parseInt(infoString[0]));
-                product.setType(infoString[1]);
-                product.setName(infoString[2]);
-                product.setAmount(Integer.parseInt(infoString[3]));
-                product.setPrice(Double.parseDouble(infoString[4]));
-                products.add(product);
+                BookEntity book=new BookEntity();
+                String[] infoString = list.get(i).split(" ", 6);
+                book.setId_book(Integer.parseInt(infoString[0]));
+                book.setName(infoString[1]);
+                book.setAuthor(infoString[2]);
+                book.setType(infoString[3]);
+                book.setAmount(Integer.parseInt(infoString[4]));
+                book.setPrice(Double.parseDouble(infoString[5]));
+                books.add(book);
             }
         id.setCellValueFactory(new PropertyValueFactory<>("id_product"));
+            name.setCellValueFactory(new PropertyValueFactory<>("name"));
+            author.setCellValueFactory(new PropertyValueFactory<>("author"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        Product.setItems(products);
+        Book.setItems(books);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -78,12 +86,12 @@ public class ShowProductController {
         }
 
         AddToBasket.setOnAction(event -> {
-            String IdProductText = TextFieldProductChoice.getText().trim();
-            if (IdProductText.matches("\\d+")==false){
+            String IdBookText = TextFieldBookChoice.getText().trim();
+            if (IdBookText.matches("\\d+")==false){
                LabelMessage.setText("Ошибка, повторите ввод.");
             }
             else{
-                String message="Basket,addToBasket,"+IdProductText+","+Client.getId_user();
+                String message="Basket,addToBasket,"+IdBookText+","+Client.getId_user();
                 try {
                     Client.os.writeObject(message);
                     message= (String) Client.is.readObject();
@@ -91,7 +99,7 @@ public class ShowProductController {
                     e.printStackTrace();
                 }
                 if(message=="success")
-                LabelMessage.setText("Товар добавлен в корзину.");
+                LabelMessage.setText("Книга добавлена в корзину.");
                 else LabelMessage.setText("Ошибка.");
             }
         });

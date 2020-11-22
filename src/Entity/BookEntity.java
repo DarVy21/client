@@ -5,30 +5,32 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductEntity{
+public class BookEntity{
 
-    private int id_product;
+    private int id_book;
     private String type;
     private String name;
+    private String author;
     private int amount;
     private double price;
 
-public ProductEntity(){}
-    public ProductEntity(int idproduct, String type, String nameproduct, int amount){
-        this.id_product=idproduct;
+    public BookEntity(){}
+
+    public BookEntity(int idBook, String type, String name, String author, int amount, double price){
+        this.id_book=idBook;
         this.type=type;
-        this.name=nameproduct;
+        this.name=name;
+        this.author=author;
         this.amount=amount;
         this.price=price;
-
     }
 
-    public int getId_product() {
-        return id_product;
+    public int getId_book() {
+        return id_book;
     }
 
-    public void setId_product(int idproduct) {
-        this.id_product = idproduct;
+    public void setId_book(int idbook) {
+        this.id_book = idbook;
     }
 
 
@@ -45,10 +47,17 @@ public ProductEntity(){}
         return name;
     }
 
-    public void setName(String nameproduct) {
-        this.name = nameproduct;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
     public int getAmount() {
         return amount;

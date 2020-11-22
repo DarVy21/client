@@ -22,7 +22,7 @@ public class ClientMainController {
     private Button Basket;
 
     @FXML
-    private Button Product;
+    private Button Book;
 
     @FXML
     private Button HistoryOrder;
@@ -32,14 +32,14 @@ public class ClientMainController {
 
     @FXML
     void initialize() {
-        Product.setOnAction(event -> {
-            String clientMessage = "Product,ShowProduct";
+        Book.setOnAction(event -> {
+            String clientMessage = "Book,ShowBook";
             try {
                 Client.os.writeObject(clientMessage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            openNewScene("/Window/ShowProductWindow.fxml");
+            openNewScene("/Window/ShowBookWindow.fxml");
         });
         Basket.setOnAction(actionEvent -> {
             String clientMessage = "Basket,ShowBasket";
@@ -54,7 +54,7 @@ public class ClientMainController {
     }
     public void openNewScene(String window)
     {
-        Product.getScene().getWindow().hide();
+        Book.getScene().getWindow().hide();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));

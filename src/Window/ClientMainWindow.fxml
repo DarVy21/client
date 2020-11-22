@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClientMainController">
    <children>
       <Button fx:id="Basket" layoutX="350.0" layoutY="136.0" mnemonicParsing="false" text="Корзина" />
-      <Button fx:id="Product" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" text="Посмотреть товар" />
+      <Button fx:id="Book" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" text="Посмотреть книги" />
       <Button fx:id="HstorOrdr" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" text="История заказов" />
       <Button fx:id="Ordr" layoutX="350.0" layoutY="200.0" mnemonicParsing="false" text="Оформить заказ" />
    </children>
