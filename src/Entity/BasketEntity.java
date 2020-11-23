@@ -8,10 +8,19 @@ import java.util.Objects;
 
 
 public class BasketEntity {
+    private int id;
     private int amount;
     private double price;
     private String name;
     public BasketEntity(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setAmount(int amount) {
         this.amount = amount;

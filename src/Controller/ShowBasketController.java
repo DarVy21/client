@@ -8,12 +8,19 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Entity.BasketEntity;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class ShowBasketController {
 
@@ -33,31 +40,80 @@ public class ShowBasketController {
     private TableColumn<BasketEntity, Integer> amount;
 
     @FXML
-        private TableColumn<BasketEntity, Double> price;
+    private TableColumn<BasketEntity, Double> price;
+    @FXML
+    private TableColumn<BasketEntity, Integer> id;
+    @FXML
+    private TextField deleteIdTF;
 
     @FXML
-    void initialize()  {
+    private Button deleteBasketButton;
+    @FXML
+    private Button backButton;
 
+    @FXML
+    void initialize() {
+        showBasket();
+        backButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/ClientMainWindow.fxml");
+        });
+        deleteBasketButton.setOnAction(actionEvent -> {
+            String idBasket=deleteIdTF.getText().trim();
+            String message="Basket,deleteBasket,"+idBasket;
+            try {
+                Client.os.writeObject(message);
+                message=(String) Client.is.readObject();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            if (message.equals("success"))
+                showBasket();
+        });
+
+    }
+
+    public void showBasket() {
         try {
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
-            BasketEntity basket= new BasketEntity();
             ObservableList<BasketEntity> baskets = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
-                String[] infoString = list.get(i).split(" ", 3);
+                BasketEntity basket = new BasketEntity();
+                String[] infoString = list.get(i).split(" ", 4);
                 basket.setAmount(Integer.parseInt(infoString[1]));
                 basket.setName(infoString[0]);
                 basket.setPrice(Double.parseDouble(infoString[2]));
+                basket.setId(Integer.parseInt(infoString[3]));
                 baskets.add(basket);
             }
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        table.setItems(baskets);
+            name.setCellValueFactory(new PropertyValueFactory<>("name"));
+            price.setCellValueFactory(new PropertyValueFactory<>("price"));
+            amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+            id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            table.setItems(baskets);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-}
 
+    public void openNewScene(String window) {
+        backButton.getScene().getWindow().hide();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(window));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+}

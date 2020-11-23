@@ -28,7 +28,7 @@ public class ClientMainController {
     private Button HistoryOrder;
 
     @FXML
-    private Button Order;
+    private Button backButton;
 
     @FXML
     void initialize() {
@@ -71,4 +71,3 @@ public class ClientMainController {
         stage.show();
     }
 }
-

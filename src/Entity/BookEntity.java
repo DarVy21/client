@@ -16,7 +16,7 @@ public class BookEntity{
 
     public BookEntity(){}
 
-    public BookEntity(int idBook, String type, String name, String author, int amount, double price){
+    public BookEntity(int idBook, String name, String author, String type, int amount, double price){
         this.id_book=idBook;
         this.type=type;
         this.name=name;
@@ -25,11 +25,11 @@ public class BookEntity{
         this.price=price;
     }
 
-    public int getId_book() {
+    public int getIdBook() {
         return id_book;
     }
 
-    public void setId_book(int idbook) {
+    public void setIdBook(int idbook) {
         this.id_book = idbook;
     }
 
