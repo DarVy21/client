@@ -50,7 +50,6 @@ public class ShowBasketController {
     private Button deleteBasketButton;
     @FXML
     private Button backButton;
-
     @FXML
     private Button OrderButton;
 
@@ -74,7 +73,6 @@ public class ShowBasketController {
             if (message.equals("success"))
                 showBasket();
         });
-
         OrderButton.setOnAction(actionEvent -> {
             String  message="Order,addToOrder,"+Client.getId_user();
             try {
@@ -91,6 +89,9 @@ public class ShowBasketController {
 
     public void showBasket() {
         try {
+            String clientMessage = "Basket,ShowBasket,"+Client.getId_user();
+            String msg= clientMessage;
+            Client.os.writeObject(clientMessage);
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
             ObservableList<BasketEntity> baskets = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
@@ -131,7 +132,6 @@ public class ShowBasketController {
         stage.setScene(new Scene(root));
         stage.show();
     }
-
     public void openOrderWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Window/OrderWindow.fxml"));
         Scene newScene;

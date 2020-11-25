@@ -25,7 +25,7 @@ public class BookEntity{
         this.price=price;
     }
 
-    public int getIdBook() {
+    public int getId_book() {
         return id_book;
     }
 
