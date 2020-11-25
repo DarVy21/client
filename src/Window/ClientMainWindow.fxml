@@ -6,8 +6,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClientMainController">
    <children>
       <Button fx:id="Basket" layoutX="297.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Корзина" />
-      <Button fx:id="Book" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" text="Посмотреть книгу" />
-      <Button fx:id="HstorOrdr" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" text="История заказов" />
+      <Button fx:id="Book" layoutX="150.0" layoutY="136.0" mnemonicParsing="false" text="Каталог книг" />
+      <Button fx:id="HistoryOrder" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" text="История заказов" />
       <Button fx:id="backButton" layoutX="297.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Назад" />
    </children>
 </AnchorPane>

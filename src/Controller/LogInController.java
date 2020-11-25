@@ -99,7 +99,7 @@ public class LogInController {
         LoginSignUpButton.setOnAction(event ->
         {
             if(UserLogInWindow.isSelected() && !AdminLogInWindow.isSelected()) {
-                openNewScene("/Client/RegisterWindow.fxml");
+                openNewScene("/Window/RegisterWindow.fxml");
             } else if (AdminLogInWindow.isSelected() && !UserLogInWindow.isSelected())
                 CautionLabel.setText("Вы можете зарегистрироваться только как пользователь!");
             else
@@ -126,5 +126,3 @@ public class LogInController {
         stage.show();
     }
 }
-
-

@@ -57,6 +57,9 @@ public class ShowBookController {
     @FXML
     private Button backButton;
 
+    @FXML
+    private TextField AmountTF;
+
 
     @FXML
     void initialize() {
@@ -66,19 +69,20 @@ public class ShowBookController {
         });
         AddToBasket.setOnAction(event -> {
             String IdBookText = TextFieldBookChoice.getText().trim();
-            if (IdBookText.matches("\\d+")==false){
+            String amountBookText=AmountTF.getText().trim();
+            if (IdBookText.matches("\\d+")==false || amountBookText.matches("\\d+")==false || Integer.parseInt(amountBookText)<0)
                 LabelMessage.setText("Ошибка, повторите ввод.");
-            }
             else{
-                String message="Basket,addToBasket,"+IdBookText+","+Client.getId_user();
+                String message="Basket,addToBasket,"+IdBookText+","+amountBookText+","+Client.getId_user();
                 try {
                     Client.os.writeObject(message);
                     message= (String) Client.is.readObject();
                 } catch (IOException | ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-                if(message.equals("success"))
+                if(message.equals("success")){
                     LabelMessage.setText("Книга добавлена в корзину.");
+                    showBook();}
                 else LabelMessage.setText("Ошибка.");
 
             }
@@ -90,7 +94,7 @@ public class ShowBookController {
             ObservableList<BookEntity> books = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
                 BookEntity book=new BookEntity();
-                String[] infoString = list.get(i).split(" ", 6);
+                String[] infoString = list.get(i).split(",", 6);
                 book.setIdBook(Integer.parseInt(infoString[0]));
                 book.setName(infoString[1]);
                 book.setAuthor(infoString[2]);

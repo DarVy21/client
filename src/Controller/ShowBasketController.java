@@ -52,6 +52,9 @@ public class ShowBasketController {
     private Button backButton;
 
     @FXML
+    private Button OrderButton;
+
+    @FXML
     void initialize() {
         showBasket();
         backButton.setOnAction(actionEvent -> {
@@ -72,6 +75,18 @@ public class ShowBasketController {
                 showBasket();
         });
 
+        OrderButton.setOnAction(actionEvent -> {
+            String  message="Order,addToOrder,"+Client.getId_user();
+            try {
+                Client.os.writeObject(message);
+                message= (String) Client.is.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            if (message.equals("success"))
+                openOrderWindow();
+        });
+
     }
 
     public void showBasket() {
@@ -80,7 +95,7 @@ public class ShowBasketController {
             ObservableList<BasketEntity> baskets = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
                 BasketEntity basket = new BasketEntity();
-                String[] infoString = list.get(i).split(" ", 4);
+                String[] infoString = list.get(i).split(",", 4);
                 basket.setAmount(Integer.parseInt(infoString[1]));
                 basket.setName(infoString[0]);
                 basket.setPrice(Double.parseDouble(infoString[2]));
@@ -115,5 +130,19 @@ public class ShowBasketController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
+    }
+
+    public void openOrderWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Window/OrderWindow.fxml"));
+        Scene newScene;
+        try {
+            newScene = new Scene(loader.load());
+        } catch (IOException ex) {
+            return;
+        }
+        Stage inputStage = new Stage();
+        inputStage.initOwner(OrderButton.getScene().getWindow());
+        inputStage.setScene(newScene);
+        inputStage.show();
     }
 }
