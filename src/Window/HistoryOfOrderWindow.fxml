@@ -5,17 +5,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HistoryOfOrderController">
     <children>
-        <TableView fx:id="Table" layoutX="125.0" layoutY="37.0" prefHeight="200.0" prefWidth="330.0">
+        <TableView fx:id="Table" layoutX="63.0" layoutY="54.0" prefHeight="250.0" prefWidth="450.0">
             <columns>
                 <TableColumn fx:id="OrderNumber" prefWidth="94.6666259765625" text="Номер заказа" />
-                <TableColumn fx:id="Amount" prefWidth="116.66664123535156" text="Общее количество" />
-                <TableColumn fx:id="Price" prefWidth="116.66664123535156" text="Общая стоимость" />
-                <TableColumn fx:id="Status" prefWidth="115.3333740234375" text="Статус заказа" />
+                <TableColumn fx:id="Price" prefWidth="101.3333740234375" text="Стоимость" />
+                <TableColumn fx:id="Amount" prefWidth="116.66664123535156" text="Количество" />
+                <TableColumn fx:id="Status" prefWidth="131.33331298828125" text="Статус заказа" />
             </columns>
         </TableView>
-        <Button fx:id="BackButton" layoutX="28.0" layoutY="24.0" mnemonicParsing="false" text="Назад" />
+        <Button fx:id="BackButton" layoutX="434.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Назад" />
     </children>
 </AnchorPane>

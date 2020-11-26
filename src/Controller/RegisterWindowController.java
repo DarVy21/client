@@ -77,7 +77,7 @@ public class RegisterWindowController {
                 else
                 {
                     LoginField.clear();
-                    LoginField.setPromptText("Юзеp с таким логином уже существует");
+                    LoginField.setPromptText("Пользователь с таким логином уже существует");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

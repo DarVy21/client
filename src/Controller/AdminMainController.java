@@ -29,9 +29,14 @@ public class AdminMainController {
 
     @FXML
     private Button BookButton;
+    @FXML
+    private Button backButton;
 
     @FXML
     void initialize() {
+        backButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/LogInWindow.fxml");
+        });
         userButton.setOnAction(actionEvent -> {
             openNewScene("/Window/AdminUserWindow.fxml");
         });
@@ -41,7 +46,7 @@ public class AdminMainController {
     }
     public void openNewScene(String window)
     {
-        userButton.getScene().getWindow().hide();
+        BookButton.getScene().getWindow().hide();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));

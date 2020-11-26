@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #C0FFC6;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5178ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
     <children>
-        <AnchorPane layoutX="15.0" layoutY="96.0" prefHeight="290.0" prefWidth="570.0" style="-fx-background-color: #ECCEF5;">
+        <AnchorPane layoutX="15.0" layoutY="96.0" prefHeight="290.0" prefWidth="570.0" style="-fx-background-color: #f5585b;">
             <children>
-                <TextField fx:id="LoginField" layoutX="140.0" layoutY="76.0" prefHeight="26.0" prefWidth="287.0" promptText="Логин" style="-fx-background-color: #ECFF90; -fx-background-radius: 5;">
+                <TextField fx:id="LoginField" layoutX="140.0" layoutY="76.0" prefHeight="26.0" prefWidth="287.0" promptText="Логин" style="-fx-background-color: #f6f4ff; -fx-background-radius: 5;">
                     <effect>
                         <Glow />
                     </effect>
@@ -21,36 +21,36 @@
                         <Font name="Century Gothic" size="12.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="PasswordField" layoutX="140.0" layoutY="118.0" prefHeight="26.0" prefWidth="287.0" promptText="Пароль" style="-fx-background-color:  #ECFF90; -fx-background-radius: 5;">
+                <PasswordField fx:id="PasswordField" layoutX="140.0" layoutY="118.0" prefHeight="26.0" prefWidth="287.0" promptText="Пароль" style="-fx-background-color: #; -fx-background-radius: 5;">
                     <effect>
                         <Glow />
                     </effect>
                     <font>
                         <Font name="Century Gothic" size="12.0" />
                     </font></PasswordField>
-                <Button fx:id="AuthSignUpButton" layoutX="258.0" layoutY="212.0" mnemonicParsing="false" style="-fx-background-color: #424242; -fx-background-radius: 5;" text="Войти" textFill="#eccef5">
+                <Button fx:id="AuthSignUpButton" layoutX="182.0" layoutY="197.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #5178ff; -fx-background-radius: 5;" text="Войти" textFill="#fcfcfc">
                     <font>
-                        <Font name="Century Gothic" size="12.0" />
+                        <Font name="Century Gothic" size="14.0" />
                     </font></Button>
-                <CheckBox fx:id="AdminLogInWindow" layoutX="140.0" layoutY="27.0" mnemonicParsing="false" text="Администратор">
+                <CheckBox fx:id="AdminLogInWindow" layoutX="140.0" layoutY="27.0" mnemonicParsing="false" text="Администратор" textFill="WHITE">
                     <font>
                         <Font name="Century Gothic" size="12.0" />
                     </font>
                 </CheckBox>
-                <CheckBox fx:id="UserLogInWindow" layoutX="324.0" layoutY="27.0" mnemonicParsing="false" text=" Пользователь">
+                <CheckBox fx:id="UserLogInWindow" layoutX="324.0" layoutY="27.0" mnemonicParsing="false" text=" Пользователь" textFill="WHITE">
                     <font>
                         <Font name="Century Gothic" size="12.0" />
                     </font>
                 </CheckBox>
                 <Label fx:id="CautionLabel" layoutX="77.0" layoutY="164.0" prefHeight="18.0" prefWidth="466.0" />
-                <Button fx:id="LoginSignUpButton" layoutX="221.0" layoutY="250.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #424242; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="#eccef5">
+                <Button fx:id="LoginSignUpButton" layoutX="182.0" layoutY="235.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #5178ff; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="WHITE">
                     <font>
-                        <Font name="Century Gothic" size="11.0" />
+                        <Font name="Century Gothic" size="14.0" />
                     </font>
                 </Button>
             </children>
         </AnchorPane>
-        <Label layoutX="38.0" layoutY="14.0" text="Добро пожаловать!" textAlignment="CENTER" textFill="#3e2e3e">
+        <Label layoutX="38.0" layoutY="14.0" text="Добро пожаловать!" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Century Gothic" size="53.0" />
             </font>

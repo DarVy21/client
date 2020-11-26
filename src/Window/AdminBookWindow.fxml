@@ -8,20 +8,20 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminBookController">
     <children>
-        <TableView fx:id="table" layoutX="32.0" layoutY="36.0" prefHeight="177.0" prefWidth="535.0">
+        <TableView fx:id="table" layoutX="32.0" layoutY="36.0" prefHeight="209.0" prefWidth="555.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="63.33334541320801" text="id" />
-                <TableColumn fx:id="name" prefWidth="153.33338928222656" text="Название" />
-                <TableColumn fx:id="author" prefWidth="153.33338928222656" text="Автор" />
-                <TableColumn fx:id="type" prefWidth="115.33330535888672" text="Тип" />
-                <TableColumn fx:id="amount" minWidth="0.6666107177734375" prefWidth="118.0" text="Количество" />
-                <TableColumn fx:id="price" prefWidth="87.33328247070312" text="Цена" />
+                <TableColumn fx:id="id" prefWidth="44.666690826416016" text="id" />
+                <TableColumn fx:id="name" prefWidth="165.99999237060547" text="Название" />
+                <TableColumn fx:id="author" prefWidth="156.6667022705078" text="Автор" />
+                <TableColumn fx:id="type" prefWidth="101.33331298828125" text="Тип" />
+                <TableColumn fx:id="amount" minWidth="0.6666107177734375" prefWidth="89.33334350585938" text="Количество" />
+                <TableColumn fx:id="price" prefWidth="142.66668701171875" text="Цена" />
             </columns>
         </TableView>
-        <Button fx:id="addButton" layoutX="32.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="249.0" text="Добавить книгу" />
-        <Button fx:id="backButton" layoutX="525.0" layoutY="7.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="61.0" text="Назад" />
-        <Button fx:id="editButton" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" text="Редактировать книгу" />
-        <Button fx:id="deleteButton" layoutX="461.0" layoutY="259.0" mnemonicParsing="false" text="Удалить книгу" />
-        <TextField fx:id="idTF" layoutX="503.0" layoutY="302.0" prefHeight="25.0" prefWidth="53.0" promptText="id" />
+        <Button fx:id="addButton" layoutX="321.0" layoutY="296.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Добавить книгу" />
+        <Button fx:id="backButton" layoutX="512.0" layoutY="296.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="61.0" text="Назад" />
+        <Button fx:id="editButton" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Редактировать книгу" />
+        <Button fx:id="deleteButton" layoutX="32.0" layoutY="296.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Удалить книгу" />
+        <TextField fx:id="idTF" layoutX="201.0" layoutY="271.0" prefHeight="25.0" prefWidth="53.0" promptText="id" />
     </children>
 </AnchorPane>

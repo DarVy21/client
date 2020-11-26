@@ -9,14 +9,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ShowBookController">
 <children>
-    <TableView fx:id="table" layoutX="24.0" layoutY="14.0" prefHeight="305.0" prefWidth="662.0">
+    <TableView fx:id="table" layoutX="8.0" layoutY="14.0" prefHeight="302.0" prefWidth="641.0">
         <columns>
-            <TableColumn fx:id="id" prefWidth="68.0000228881836" text="id" />
-            <TableColumn fx:id="name" prefWidth="150.0" text="Название" />
-            <TableColumn fx:id="author" prefWidth="150.0" text="Автор" />
+            <TableColumn fx:id="id" prefWidth="54.66668510437012" text="id" />
+            <TableColumn fx:id="name" prefWidth="156.00000762939453" text="Название" />
+            <TableColumn fx:id="author" prefWidth="157.99998474121094" text="Автор" />
             <TableColumn fx:id="type" prefWidth="115.33329772949219" text="Тип" />
-            <TableColumn fx:id="price" prefWidth="70.0" text="Цена" />
-            <TableColumn fx:id="amount" text="Количество" />
+            <TableColumn fx:id="price" prefWidth="62.666656494140625" text="Цена" />
+            <TableColumn fx:id="amount" prefWidth="108.66668701171875" text="Количество" />
         </columns>
     </TableView>
     <TextField fx:id="TextFieldBookChoice" layoutX="24.0" layoutY="347.0" prefHeight="25.0" prefWidth="127.0" promptText="id книги" />

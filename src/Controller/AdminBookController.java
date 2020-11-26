@@ -82,6 +82,7 @@ public class AdminBookController {
         } );
         addButton.setOnAction(actionEvent -> {
             openAddBookWindow();
+            showBook();
         });
         editButton.setOnAction(actionEvent -> {
 

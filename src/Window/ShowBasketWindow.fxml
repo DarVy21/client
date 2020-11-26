@@ -8,17 +8,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ShowBasketController">
     <children>
-        <TableView fx:id="table" layoutX="110.0" layoutY="39.0" prefHeight="200.0" prefWidth="391.0">
+        <TableView fx:id="table" layoutX="64.0" layoutY="36.0" prefHeight="234.0" prefWidth="485.0">
             <columns>
-                <TableColumn fx:id="name" prefWidth="125.33330535888672" text="Название" />
-                <TableColumn fx:id="amount" prefWidth="140.00001525878906" text="Количестов" />
-                <TableColumn fx:id="price" prefWidth="74.66668701171875" text="Цена" />
-                <TableColumn fx:id="id" prefWidth="46.666748046875" text="id" />
+                <TableColumn fx:id="id" prefWidth="70.66667938232422" text="id" />
+                <TableColumn fx:id="name" prefWidth="191.99998474121094" text="Название" />
+                <TableColumn fx:id="amount" prefWidth="112.0" text="Количество" />
+                <TableColumn fx:id="price" prefWidth="109.99996948242188" text="Цена" />
             </columns>
         </TableView>
-        <Button fx:id="backButton" layoutX="29.0" layoutY="26.0" mnemonicParsing="false" text="Назад" />
-        <TextField fx:id="deleteIdTF" layoutX="110.0" layoutY="286.0" promptText="id товара" />
-        <Button fx:id="deleteBasketButton" layoutX="274.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Удалить" />
-        <Button fx:id="OrderButton" layoutX="110.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="391.0" text="Оформить заказ" />
+        <Button fx:id="backButton" layoutX="475.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Назад" />
+        <TextField fx:id="deleteIdTF" layoutX="64.0" layoutY="298.0" prefHeight="25.0" prefWidth="74.0" promptText="id книги" />
+        <Button fx:id="deleteBasketButton" layoutX="171.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Удалить" />
+        <Button fx:id="OrderButton" layoutX="300.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Оформить заказ" />
     </children>
 </AnchorPane>

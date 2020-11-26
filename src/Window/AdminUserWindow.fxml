@@ -8,16 +8,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminUserController">
     <children>
-        <TableView fx:id="table" layoutX="52.0" layoutY="33.0" prefHeight="337.0" prefWidth="229.0">
+        <TableView fx:id="table" layoutX="52.0" layoutY="33.0" prefHeight="278.0" prefWidth="283.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="75.0" text="id" />
-                <TableColumn fx:id="login" prefWidth="75.0" text="Логин" />
-                <TableColumn fx:id="password" prefWidth="75.0" text="Пароль" />
+                <TableColumn fx:id="id" prefWidth="52.66666030883789" text="id" />
+                <TableColumn fx:id="login" prefWidth="108.6666488647461" text="Логин" />
+                <TableColumn fx:id="password" prefWidth="121.33338928222656" text="Пароль" />
             </columns>
         </TableView>
-        <Button fx:id="deleteUserButton" layoutX="355.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Удалить" />
-        <Button fx:id="addAdminButton" layoutX="310.0" layoutY="187.0" mnemonicParsing="false" text="Добавить администратора" />
-        <Button fx:id="backButton" layoutX="310.0" layoutY="235.0" mnemonicParsing="false" text="Назад" />
-        <TextField fx:id="idTF" layoutX="316.0" layoutY="107.0" prefHeight="25.0" prefWidth="27.0" promptText="id" />
+        <Button fx:id="deleteUserButton" layoutX="388.0" layoutY="119.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Удалить" />
+        <Button fx:id="addAdminButton" layoutX="388.0" layoutY="172.0" mnemonicParsing="false" text="Добавить администратора" />
+        <Button fx:id="backButton" layoutX="494.0" layoutY="344.0" mnemonicParsing="false" text="Назад" />
+        <TextField fx:id="idTF" layoutX="346.0" layoutY="119.0" prefHeight="25.0" prefWidth="27.0" promptText="id" />
     </children>
 </AnchorPane>

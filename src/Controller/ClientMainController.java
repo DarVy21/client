@@ -32,6 +32,11 @@ public class ClientMainController {
 
     @FXML
     void initialize() {
+
+        backButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/LogInWindow.fxml");
+        });
+
         Book.setOnAction(actionEvent -> {
 
             openNewScene("/Window/ShowBookWindow.fxml");
