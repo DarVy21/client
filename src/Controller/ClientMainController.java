@@ -32,22 +32,12 @@ public class ClientMainController {
 
     @FXML
     void initialize() {
-        Book.setOnAction(event -> {
-            String clientMessage = "Book,ShowBook";
-            try {
-                Client.os.writeObject(clientMessage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        Book.setOnAction(actionEvent -> {
+
             openNewScene("/Window/ShowBookWindow.fxml");
         });
         Basket.setOnAction(actionEvent -> {
-            String clientMessage = "Basket,ShowBasket";
-            try {
-                Client.os.writeObject(clientMessage);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
             openNewScene("/Window/ShowBasketWindow.fxml");
         });
         HistoryOrder.setOnAction(actionEvent -> {

@@ -29,7 +29,7 @@ public class BookEntity{
         return id_book;
     }
 
-    public void setIdBook(int idbook) {
+    public void setId_book(int idbook) {
         this.id_book = idbook;
     }
 

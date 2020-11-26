@@ -26,7 +26,7 @@ public class ShowBookController {
     private URL location;
 
     @FXML
-    private TableView<BookEntity> Book;
+    private TableView<BookEntity> table;
 
     @FXML
     private TableColumn<BookEntity, Integer> id;
@@ -90,17 +90,20 @@ public class ShowBookController {
     }
     public void showBook(){
         try {
+            String clientMessage = "Book,ShowBook";
+            Client.os.writeObject(clientMessage);
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
             ObservableList<BookEntity> books = FXCollections.observableArrayList();
             for (int i = 0; i < list.size(); i++) {
                 BookEntity book=new BookEntity();
                 String[] infoString = list.get(i).split(",", 6);
-                book.setIdBook(Integer.parseInt(infoString[0]));
+                book.setId_book(Integer.parseInt(infoString[0]));
                 book.setName(infoString[1]);
                 book.setAuthor(infoString[2]);
                 book.setType(infoString[3]);
-                book.setPrice(Double.parseDouble(infoString[4]));
-                book.setAmount(Integer.parseInt(infoString[5]));
+                book.setAmount(Integer.parseInt(infoString[4]));
+                book.setPrice(Double.parseDouble(infoString[5]));
+
 
                 books.add(book);
             }
@@ -110,7 +113,7 @@ public class ShowBookController {
             type.setCellValueFactory(new PropertyValueFactory<>("type"));
             price.setCellValueFactory(new PropertyValueFactory<>("price"));
             amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-            Book.setItems(books);
+            table.setItems(books);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

@@ -69,7 +69,7 @@ public class LogInController {
                     openNewScene("/Window/ClientMainWindow.fxml");
                 }
             } else if (AdminLogInWindow.isSelected() && !UserLogInWindow.isSelected()) {
-                String clientMessage = "checkSingInAdmin," + loginText + "," + loginPassword;
+                String clientMessage = "User,checkSingInAdmin," + loginText + "," + loginPassword;
 
                 try {
                     Client.os.writeObject(clientMessage);
@@ -81,13 +81,7 @@ public class LogInController {
                 }
 
                 if (message.equals("successAdmin")) {
-                    String clM = "sendData," + loginText;
-                    try {
-                        Client.os.writeObject(clM);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    openNewScene("/Client/AdMainWin.fxml");
+                    openNewScene("/Window/AdminMainWindow.fxml");
                 } else if (message.equals("fail"))
                     CautionLabel.setText("Такого администратора не существует!");
             } else

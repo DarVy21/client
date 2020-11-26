@@ -3,6 +3,7 @@ package Entity;
 
 public class OrderEntity {
     private int orderNumber;
+    private int totalAmount;
     private double totalPrice;
     private String status;
 
@@ -21,6 +22,14 @@ public class OrderEntity {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public int getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public String getStatus() {

@@ -11,6 +11,7 @@
         <TableView fx:id="Table" layoutX="125.0" layoutY="37.0" prefHeight="200.0" prefWidth="330.0">
             <columns>
                 <TableColumn fx:id="OrderNumber" prefWidth="94.6666259765625" text="Номер заказа" />
+                <TableColumn fx:id="Amount" prefWidth="116.66664123535156" text="Общее количество" />
                 <TableColumn fx:id="Price" prefWidth="116.66664123535156" text="Общая стоимость" />
                 <TableColumn fx:id="Status" prefWidth="115.3333740234375" text="Статус заказа" />
             </columns>

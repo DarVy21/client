@@ -90,7 +90,6 @@ public class ShowBasketController {
     public void showBasket() {
         try {
             String clientMessage = "Basket,ShowBasket,"+Client.getId_user();
-            String msg= clientMessage;
             Client.os.writeObject(clientMessage);
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
             ObservableList<BasketEntity> baskets = FXCollections.observableArrayList();

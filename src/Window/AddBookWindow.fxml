@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="249.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddBookController">
+    <children>
+        <TextField fx:id="price" layoutX="26.0" layoutY="82.0" promptText="Цена" />
+        <TextField fx:id="name" layoutX="204.0" layoutY="30.0" promptText="Название" />
+        <TextField fx:id="author" layoutX="204.0" layoutY="30.0" promptText="Автор" />
+        <TextField fx:id="amount" layoutX="204.0" layoutY="82.0" promptText="Количество" />
+        <ComboBox fx:id="type" layoutX="25.0" layoutY="30.0" prefWidth="150.0" promptText="Жанр">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String  fx:value="Телефон" />
+                    <String  fx:value="Планшет" />
+                    <String  fx:value="Ноутбук" />
+                    <String  fx:value="Принтер" />
+                    <String  fx:value="Часы" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button fx:id="addButton" layoutX="133.0" layoutY="182.0" mnemonicParsing="false" text="Добавить товар" />
+        <Label fx:id="MessageLabel" layoutX="71.0" layoutY="135.0" prefHeight="32.0" prefWidth="242.0" />
+    </children>
+</AnchorPane>
