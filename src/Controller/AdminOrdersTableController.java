@@ -7,19 +7,18 @@ import java.util.ResourceBundle;
 
 import Entity.BasketEntity;
 import Entity.OrderEntity;
+import Entity.UsersEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class HistoryOfOrderController {
+public class AdminOrdersTableController {
 
     @FXML
     private ResourceBundle resources;
@@ -44,17 +43,46 @@ public class HistoryOfOrderController {
 
     @FXML
     private Button BackButton;
+    @FXML
+    private TextField idOrder;
+    @FXML
+    private ComboBox<String> orderStatus;
+    @FXML
+    private Button changeButton;
+    @FXML
+    private Label MessageLabel;
 
     @FXML
     void initialize() {
         showOrder();
         BackButton.setOnAction(actionEvent -> {
-            openNewScene("/Window/ClientMainWindow.fxml");
+            openNewScene("/Window/AdminMainWindow.fxml");
+        });
+        changeButton.setOnAction(actionEvent -> {
+            changeStatus();
         });
     }
 
+    private void changeStatus(){
+        String idOrderTF=idOrder.getText().trim();
+        String statusOrderCB = orderStatus.getValue().trim();
+        String message="Order,changeStatus,"+idOrderTF+","+statusOrderCB;
+        try {
+            Client.os.writeObject(message);
+            message= (String) Client.is.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        if(message.equals("success")){
+            MessageLabel.setText("Статус изменен.");
+        }
+        else MessageLabel.setText("Ошибка.");
+
+
+    }
+
     private void showOrder() {
-        String message="Order,showOrder,"+Client.getId_user();
+        String message="Order,showOrderAdmin";
         try {
             Client.os.writeObject(message);
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();

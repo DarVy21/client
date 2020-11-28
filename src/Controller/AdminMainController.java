@@ -43,6 +43,9 @@ public class AdminMainController {
         BookButton.setOnAction(actionEvent -> {
             openNewScene("/Window/AdminBookWindow.fxml");
         });
+        OrderButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/AdminOrdersTableWindow.fxml");
+        });
     }
     public void openNewScene(String window)
     {

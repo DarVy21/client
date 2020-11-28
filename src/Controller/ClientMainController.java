@@ -46,7 +46,7 @@ public class ClientMainController {
             openNewScene("/Window/ShowBasketWindow.fxml");
         });
         HistoryOrder.setOnAction(actionEvent -> {
-            openNewScene("/Window/HistoryOfOrderWindow.fxml");
+            openNewScene("/Window/TableOfOrdersWindow.fxml");
         });
 
     }
