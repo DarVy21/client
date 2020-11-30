@@ -9,5 +9,6 @@
       <Button fx:id="Book" layoutX="74.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Каталог книг" />
       <Button fx:id="HistoryOrder" layoutX="74.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Таблица заказов" />
       <Button fx:id="backButton" layoutX="346.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Назад" />
+      <Button fx:id="PromocodButton" layoutX="278.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Промокоды" />
    </children>
 </AnchorPane>

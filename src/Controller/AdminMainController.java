@@ -31,6 +31,9 @@ public class AdminMainController {
     private Button BookButton;
     @FXML
     private Button backButton;
+    @FXML
+    private Button PromocodButton;
+
 
     @FXML
     void initialize() {
@@ -46,7 +49,11 @@ public class AdminMainController {
         OrderButton.setOnAction(actionEvent -> {
             openNewScene("/Window/AdminOrdersTableWindow.fxml");
         });
+        PromocodButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/AdminDiscountWindow.fxml");
+        });
     }
+
     public void openNewScene(String window)
     {
         BookButton.getScene().getWindow().hide();

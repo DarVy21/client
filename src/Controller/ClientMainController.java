@@ -29,6 +29,8 @@ public class ClientMainController {
 
     @FXML
     private Button backButton;
+    @FXML
+    private Button PromocodButton;
 
     @FXML
     void initialize() {
@@ -48,6 +50,10 @@ public class ClientMainController {
         HistoryOrder.setOnAction(actionEvent -> {
             openNewScene("/Window/TableOfOrdersWindow.fxml");
         });
+        PromocodButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/ClientDiscountWindow.fxml");
+        });
+
 
     }
     public void openNewScene(String window)

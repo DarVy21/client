@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminDiscountController">
+    <children>
+        <TableView fx:id="table" layoutX="64.0" layoutY="36.0" prefHeight="234.0" prefWidth="485.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="52.66668701171875" text="id" />
+                <TableColumn fx:id="clientId" prefWidth="96.0000228881836" text="id Клиента" />
+                <TableColumn fx:id="promocod" prefWidth="213.3333282470703" text="Промокод" />
+                <TableColumn fx:id="discountSize" prefWidth="124.66659545898438" text="Размер скидки(%)" />
+            </columns>
+        </TableView>
+        <Button fx:id="backButton" layoutX="475.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Назад" />
+        <TextField fx:id="deleteIdTF" layoutX="64.0" layoutY="338.0" prefHeight="25.0" prefWidth="91.0" promptText="id промокода" />
+        <Button fx:id="deletePromocodButton" layoutX="171.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Удалить" />
+        <Button fx:id="AddDiscountButton" layoutX="300.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Добавить промокод" />
+        <Label id="labelMessage" layoutX="138.0" layoutY="293.0" prefHeight="17.0" prefWidth="265.0" textFill="#ec0800" />
+    </children>
+</AnchorPane>
