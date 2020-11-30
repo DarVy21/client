@@ -15,10 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -54,6 +51,9 @@ public class ShowBasketController {
     private Button OrderButton;
 
     @FXML
+    private Label labelMessage;
+
+    @FXML
     void initialize() {
         showBasket();
         backButton.setOnAction(actionEvent -> {
@@ -75,9 +75,18 @@ public class ShowBasketController {
         });
         OrderButton.setOnAction(actionEvent -> {
             String  message="Order,addToOrder,"+Client.getId_user();
+            String clientMessage = "Basket,ShowBasket,"+Client.getId_user();
             try {
-                Client.os.writeObject(message);
-                message= (String) Client.is.readObject();
+
+                Client.os.writeObject(clientMessage);
+                ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
+                if (list.size() == 0){
+                    labelMessage.setText("Ваша корзина пуста!");
+                }
+                else {
+                    Client.os.writeObject(message);
+                    message = (String) Client.is.readObject();
+                }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }

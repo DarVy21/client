@@ -81,16 +81,23 @@ public class AdminBookController {
             openNewScene("/Window/AdminMainWindow.fxml");
         } );
         addButton.setOnAction(actionEvent -> {
-            openAddBookWindow();
-            showBook();
+            openSecondWin("/Window/AddBookWindow");
+           // showBook();
         });
         editButton.setOnAction(actionEvent -> {
-
+            String editId= idTF.getText();
+            String message="Book,editBook,"+editId;
+            try {
+                Client.os.writeObject(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            openSecondWin("/Window/EditBookWindow.fxml");
         });
     }
 
-    private void openAddBookWindow() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Window/AddBookWindow.fxml"));
+    private void openSecondWin(String win) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(win));
         Scene newScene;
         try {
             newScene = new Scene(loader.load());

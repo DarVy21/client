@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5178ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff ;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
     <children>
-        <AnchorPane layoutX="15.0" layoutY="96.0" prefHeight="290.0" prefWidth="570.0" style="-fx-background-color: #f5585b;">
+        <AnchorPane layoutX="15.0" layoutY="96.0" prefHeight="290.0" prefWidth="570.0" style="-fx-background-color: #eb0404;">
             <children>
                 <TextField fx:id="LoginField" layoutX="140.0" layoutY="76.0" prefHeight="26.0" prefWidth="287.0" promptText="Логин" style="-fx-background-color: #f6f4ff; -fx-background-radius: 5;">
                     <effect>
@@ -28,7 +28,7 @@
                     <font>
                         <Font name="Century Gothic" size="12.0" />
                     </font></PasswordField>
-                <Button fx:id="AuthSignUpButton" layoutX="182.0" layoutY="197.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #5178ff; -fx-background-radius: 5;" text="Войти" textFill="#fcfcfc">
+                <Button fx:id="AuthSignUpButton" layoutX="182.0" layoutY="197.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #fff; -fx-background-radius: 5;" text="Войти" textFill="#eb0404">
                     <font>
                         <Font name="Century Gothic" size="14.0" />
                     </font></Button>
@@ -37,13 +37,13 @@
                         <Font name="Century Gothic" size="12.0" />
                     </font>
                 </CheckBox>
-                <CheckBox fx:id="UserLogInWindow" layoutX="324.0" layoutY="27.0" mnemonicParsing="false" text=" Пользователь" textFill="WHITE">
+                <CheckBox fx:id="UserLogInWindow" layoutX="324.0" layoutY="27.0" mnemonicParsing="false" selected="true" text=" Пользователь" textFill="WHITE">
                     <font>
                         <Font name="Century Gothic" size="12.0" />
                     </font>
                 </CheckBox>
                 <Label fx:id="CautionLabel" layoutX="77.0" layoutY="164.0" prefHeight="18.0" prefWidth="466.0" />
-                <Button fx:id="LoginSignUpButton" layoutX="182.0" layoutY="235.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #5178ff; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="WHITE">
+                <Button fx:id="LoginSignUpButton" layoutX="182.0" layoutY="235.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="174.0" style="-fx-background-color: #fff; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="#eb0404">
                     <font>
                         <Font name="Century Gothic" size="14.0" />
                     </font>

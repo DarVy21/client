@@ -71,7 +71,7 @@ public class RegisterWindowController {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Client.setId_user(Integer.parseInt(mes));
+                    //Client.setId_user(Integer.parseInt(mes));
                     openNewScene("/Window/ClientMainWindow.fxml");
                 }
                 else

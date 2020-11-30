@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5178ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterWindowController">
     <children>
-        <AnchorPane layoutX="102.0" layoutY="70.0" prefHeight="299.0" prefWidth="342.0" style="-fx-background-color: #f5585b;">
+        <AnchorPane layoutX="102.0" layoutY="70.0" prefHeight="299.0" prefWidth="342.0" style="-fx-background-color: #eb0404;">
             <children>
                 <TextField fx:id="LoginField" layoutX="39.0" layoutY="150.0" prefHeight="26.0" prefWidth="287.0" promptText="Логин" style="-fx-background-color: #; -fx-background-radius: 5;">
                     <effect>
@@ -22,7 +22,7 @@
                     <effect>
                         <Glow />
                     </effect></PasswordField>
-                <Button fx:id="SignUpButton" layoutX="99.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #5178ff; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="#f9f9f9" />
+                <Button fx:id="SignUpButton" layoutX="99.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #fff; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="#eb0404" />
                 <TextField fx:id="SignUpName" layoutX="39.0" layoutY="32.0" prefHeight="26.0" prefWidth="287.0" promptText="Имя" style="-fx-background-color: #; -fx-background-radius: 5;">
                     <effect>
                         <Glow />
@@ -33,13 +33,13 @@
                         <Glow />
                     </effect>
                 </TextField>
-                <CheckBox fx:id="SignUpCheckBoxMale" layoutX="72.0" layoutY="113.0" mnemonicParsing="false" text="Мужской" />
-                <CheckBox fx:id="SignUpCheckBoxFemale" layoutX="154.0" layoutY="113.0" mnemonicParsing="false" text="Женский" />
-                <CheckBox fx:id="SignUpCheckBoxOther" layoutX="232.0" layoutY="113.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="143.0" text="не определился(лась)" />
-                <Label layoutX="39.0" layoutY="113.0" text="Пол:" />
+                <CheckBox fx:id="SignUpCheckBoxMale" layoutX="72.0" layoutY="113.0" mnemonicParsing="false" text="Мужской" textFill="WHITE" />
+                <CheckBox fx:id="SignUpCheckBoxFemale" layoutX="154.0" layoutY="113.0" mnemonicParsing="false" text="Женский" textFill="WHITE" />
+                <CheckBox fx:id="SignUpCheckBoxOther" layoutX="232.0" layoutY="113.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="143.0" text="не определился(лась)" textFill="WHITE" />
+                <Label layoutX="39.0" layoutY="113.0" text="Пол:" textFill="WHITE" />
             </children>
         </AnchorPane>
-        <Label layoutX="129.0" prefHeight="70.0" prefWidth="342.0" text="Регистрация" textAlignment="CENTER" textFill="WHITE">
+        <Label layoutX="129.0" prefHeight="70.0" prefWidth="342.0" text="Регистрация" textAlignment="CENTER" textFill="#eb0404">
             <font>
                 <Font name="High Tower Text" size="52.0" />
             </font>
