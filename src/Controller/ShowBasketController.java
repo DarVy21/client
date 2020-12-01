@@ -91,7 +91,7 @@ public class ShowBasketController {
                 e.printStackTrace();
             }
             if (message.equals("success"))
-                openOrderWindow();
+                openOrderDiscountWindow();
         });
 
     }
@@ -140,8 +140,8 @@ public class ShowBasketController {
         stage.setScene(new Scene(root));
         stage.show();
     }
-    public void openOrderWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Window/OrderWindow.fxml"));
+    public void openOrderDiscountWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Window/OrderDiscountWindow.fxml"));
         Scene newScene;
         try {
             newScene = new Scene(loader.load());

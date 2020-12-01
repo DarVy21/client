@@ -14,20 +14,7 @@
         <TextField fx:id="promocod" layoutX="168.0" layoutY="30.0" prefHeight="25.0" prefWidth="178.0" promptText="промокод"  />
         <TextField fx:id="discountSize" layoutX="168.0" layoutY="69.0" promptText="размер скидки"  />
         <TextField fx:id="clientId" layoutX="26.0" layoutY="30.0" prefHeight="25.0" prefWidth="101.0" promptText="id клиента"  />
-        <ComboBox fx:id="client" layoutX="25.0" layoutY="69.0" prefHeight="25.0" prefWidth="101.0" promptText="id клиента">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Роман" />
-                    <String fx:value="Детектив" />
-                    <String fx:value="Драма" />
-                    <String fx:value="Научные" />
-                    <String fx:value="Утопия" />
-                    <String fx:value="Антиутопия" />
-                    <String fx:value="Психология" />
-                    <String fx:value="Другое" />
-                </FXCollections>
-            </items>
-        </ComboBox>
+
         <Button fx:id="addButton" layoutX="104.0" layoutY="183.0" mnemonicParsing="false" text="Добавить промокод" />
         <Label fx:id="MessageLabel" layoutX="64.0" layoutY="143.0" prefHeight="32.0" prefWidth="242.0" />
         <Button fx:id="backButton" layoutX="301.0" layoutY="183.0" mnemonicParsing="false" text="назад" />

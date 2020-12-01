@@ -57,7 +57,7 @@ public class ClientDiscountController {
 
     public void showDiscount() {
         try {
-            String clientMessage = "Discount,ShowDiscount,"+Client.getId_user();
+            String clientMessage = "Discount,showDiscount,"+Client.getId_user();
             Client.os.writeObject(clientMessage);
             ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
             ObservableList<DiscountEntity> discounts = FXCollections.observableArrayList();
