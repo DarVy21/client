@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="249.0" prefWidth="407.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditBookController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="178.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditBookController">
     <children>
-        <TextField fx:id="price" layoutX="204.0" layoutY="125.0" promptText="Цена" />
-
-        <TextField fx:id="author" layoutX="204.0" layoutY="42.0" promptText="Автор" />
-        <TextField fx:id="amount" layoutX="204.0" layoutY="81.0" promptText="Количество" />
-        <TextField fx:id="name" layoutX="26.0" layoutY="42.0" promptText="Название" />
-        <ComboBox fx:id="type" layoutX="25.0" layoutY="81.0" prefWidth="150.0" promptText="Жанр">
+        <ComboBox fx:id="editChoice" layoutX="27.0" layoutY="26.0" prefHeight="25.0" prefWidth="187.0" promptText="Поля для редактирования">
             <items>
                 <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Роман" />
-                    <String fx:value="Детектив" />
-                    <String fx:value="Драма" />
-                    <String fx:value="Научные" />
-                    <String fx:value="Утопия" />
-                    <String fx:value="Антиутопия" />
-                    <String fx:value="Психология" />
-                    <String fx:value="Другое" />
+                    <String  fx:value="Название" />
+                    <String  fx:value="Автор" />
+                    <String  fx:value="Жанр" />
+                    <String fx:value="Цена" />
+                    <String  fx:value="Количество" />
                 </FXCollections>
             </items>
         </ComboBox>
-        <Button fx:id="addButton" layoutX="119.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Изменить" />
-        <Label fx:id="MessageLabel" layoutX="75.0" layoutY="157.0" prefHeight="25.0" prefWidth="242.0" textFill="#f30000" />
-        <Button fx:id="backButton" layoutX="317.0" layoutY="189.0" mnemonicParsing="false" text="назад" />
-      <Label layoutX="43.0" layoutY="14.0" prefHeight="17.0" prefWidth="322.0" style="-fx-background-color: #fff;" text="Заполните только те поля, которые хотите изменить" textFill="#ff2c02" />
+        <Button fx:id="editButton" layoutX="159.0" layoutY="107.0" mnemonicParsing="false" text="Отредактировать" />
+        <TextField fx:id="editTF" layoutX="246.0" layoutY="26.0" promptText="Новое значение" />
+        <Label fx:id="MessageLabel" layoutX="140.0" layoutY="70.0" prefHeight="25.0" prefWidth="179.0" />
     </children>
 </AnchorPane>

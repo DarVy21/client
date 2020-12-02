@@ -85,14 +85,16 @@ public class AdminBookController {
            // showBook();
         });
         editButton.setOnAction(actionEvent -> {
-            String editId= idTF.getText();
-            String message="Book,editBook,"+editId;
-            try {
-                Client.os.writeObject(message);
-            } catch (IOException e) {
-                e.printStackTrace();
+            String deleteId= idTF.getText().trim();
+            if (deleteId!=null || Integer.parseInt(deleteId)>0){
+                String message="Book,editBook,"+deleteId;
+                try {
+                    Client.os.writeObject(message);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                openSecondWin("/Window/EditBookWindow.fxml");
             }
-            openSecondWin("/Window/EditBookWindow.fxml");
         });
     }
 

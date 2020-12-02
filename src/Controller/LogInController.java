@@ -61,7 +61,6 @@ public class LogInController {
                 } catch (IOException | ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-
                 if (message.equals("fail"))
                     CautionLabel.setText("Такого пользователя не существует!");
                 else {
@@ -97,7 +96,7 @@ public class LogInController {
             } else if (AdminLogInWindow.isSelected() && !UserLogInWindow.isSelected())
                 CautionLabel.setText("Вы можете зарегистрироваться только как пользователь!");
             else
-                CautionLabel.setText("Пожалуйста, выберите администратор или пользователь!");
+                CautionLabel.setText("Пожалуйста, выберите администратор либо пользователь!");
         });
     }
 
@@ -120,5 +119,3 @@ public class LogInController {
         stage.show();
     }
 }
-
-
