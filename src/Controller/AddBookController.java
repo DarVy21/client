@@ -53,7 +53,7 @@ public class AddBookController {
         });
 
         backButton.setOnAction(actionEvent -> {
-            openNewScene("/Window/ShowBookWindow.fxml");
+            backButton.getScene().getWindow().hide();
         });
     }
 

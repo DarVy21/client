@@ -2,11 +2,11 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
-import Entity.BookEntity;
+import Server.Entities.BookEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -92,21 +92,10 @@ public class ShowBookController {
         try {
             String clientMessage = "Book,ShowBook";
             Client.os.writeObject(clientMessage);
-            ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
+            List<BookEntity> list= (List<BookEntity>) Client.is.readObject();
             ObservableList<BookEntity> books = FXCollections.observableArrayList();
-            for (int i = 0; i < list.size(); i++) {
-                BookEntity book=new BookEntity();
-                String[] infoString = list.get(i).split(",", 6);
-                book.setId_book(Integer.parseInt(infoString[0]));
-                book.setName(infoString[1]);
-                book.setAuthor(infoString[2]);
-                book.setType(infoString[3]);
-                book.setAmount(Integer.parseInt(infoString[4]));
-                book.setPrice(Double.parseDouble(infoString[5]));
-
-
+            for (BookEntity book:list)
                 books.add(book);
-            }
             id.setCellValueFactory(new PropertyValueFactory<>("id_book"));
             name.setCellValueFactory(new PropertyValueFactory<>("name"));
             author.setCellValueFactory(new PropertyValueFactory<>("author"));

@@ -1,5 +1,6 @@
 package Controller;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,11 +51,10 @@ public class LogInController {
         Client.Connect();
 
         AuthSignUpButton.setOnAction(event -> {
-            String loginText = LoginField.getText().trim();
-            String loginPassword = PasswordField.getText().trim();
-            if (UserLogInWindow.isSelected() && !AdminLogInWindow.isSelected()) {
-                String clientMessage = "User,"+"checkSingInClient," + loginText + "," + loginPassword;
-
+            String login = LoginField.getText().trim();
+            String password = PasswordField.getText().trim();
+            if (UserLogInWindow.isSelected() && !AdminLogInWindow.isSelected() && login!=null&& password!=null) {
+                String clientMessage = "User,"+"checkSingInClient," + login + "," + password;
                 try {
                     Client.os.writeObject(clientMessage);
                     message = (String) Client.is.readObject();
@@ -69,7 +69,7 @@ public class LogInController {
                     openNewScene("/Window/ClientMainWindow.fxml");
                 }
             } else if (AdminLogInWindow.isSelected() && !UserLogInWindow.isSelected()) {
-                String clientMessage = "User,checkSingInAdmin," + loginText + "," + loginPassword;
+                String clientMessage = "User,checkSingInAdmin," + login + "," + password;
 
                 try {
                     Client.os.writeObject(clientMessage);
@@ -97,7 +97,7 @@ public class LogInController {
             } else if (AdminLogInWindow.isSelected() && !UserLogInWindow.isSelected())
                 CautionLabel.setText("Вы можете зарегистрироваться только как пользователь!");
             else
-                CautionLabel.setText("Пожалуйста, выберите администратор либо пользователь!");
+                CautionLabel.setText("Пожалуйста, выберите администратор или пользователь!");
         });
     }
 
@@ -120,3 +120,5 @@ public class LogInController {
         stage.show();
     }
 }
+
+

@@ -32,24 +32,6 @@ public class RegisterWindowController {
     private Button SignUpButton;
 
     @FXML
-    private TextField SignUpName;
-
-    @FXML
-    private TextField SignUpSurname;
-
-    @FXML
-    private CheckBox SignUpCheckBoxMale;
-
-    @FXML
-    private CheckBox SignUpCheckBoxFemale;
-
-    @FXML
-    private TextField SignUpCountry;
-
-    @FXML
-    private CheckBox SignUpCheckBoxOther;
-
-    @FXML
     void initialize()
     {
         SignUpButton.setOnAction(event ->
@@ -65,14 +47,9 @@ public class RegisterWindowController {
                 if(mes.equals("success"))
                 {
                     String clientMessage = "User,addClient,"+ login + "," + Password;
-                    try {
-                        Client.os.writeObject(clientMessage);
-                        mes= (String) Client.is.readObject();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    //Client.setId_user(Integer.parseInt(mes));
-                    openNewScene("/Window/ClientMainWindow.fxml");
+                    Client.os.writeObject(clientMessage);
+                    mes= (String) Client.is.readObject();;
+                    openNewScene("/Window/LogInWindow.fxml");
                 }
                 else
                 {

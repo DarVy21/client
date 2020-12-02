@@ -2,12 +2,10 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-import Entity.BasketEntity;
-import Entity.OrderEntity;
-import Entity.UsersEntity;
+import Server.Entities.OrdersEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,19 +25,19 @@ public class AdminOrdersTableController {
     private URL location;
 
     @FXML
-    private TableView<OrderEntity> Table;
+    private TableView<OrdersEntity> Table;
 
     @FXML
-    private TableColumn<OrderEntity, Integer> OrderNumber;
+    private TableColumn<OrdersEntity, Integer> OrderNumber;
 
     @FXML
-    private TableColumn<OrderEntity, Integer> Amount;
+    private TableColumn<OrdersEntity, Integer> Amount;
 
     @FXML
-    private TableColumn<OrderEntity, Double> Price;
+    private TableColumn<OrdersEntity, Double> Price;
 
     @FXML
-    private TableColumn<OrderEntity, String> Status;
+    private TableColumn<OrdersEntity, String> Status;
 
     @FXML
     private Button BackButton;
@@ -85,17 +83,10 @@ public class AdminOrdersTableController {
         String message="Order,showOrderAdmin";
         try {
             Client.os.writeObject(message);
-            ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
-            ObservableList<OrderEntity> orders = FXCollections.observableArrayList();
-            for (int i = 0; i < list.size(); i++) {
-                OrderEntity order = new OrderEntity();
-                String[] infoString = list.get(i).split(",", 4);
-                order.setOrderNumber(Integer.parseInt(infoString[0]));
-                order.setTotalAmount(Integer.parseInt(infoString[1]));
-                order.setTotalPrice(Double.parseDouble(infoString[2]));
-                order.setStatus(infoString[3]);
+            List<OrdersEntity> list = (List<OrdersEntity>) Client.is.readObject();
+            ObservableList<OrdersEntity> orders = FXCollections.observableArrayList();
+            for (OrdersEntity order: list)
                 orders.add(order);
-            }
             OrderNumber.setCellValueFactory(new PropertyValueFactory<>("orderNumber"));
             Amount.setCellValueFactory(new PropertyValueFactory<>("totalAmount"));
             Price.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));

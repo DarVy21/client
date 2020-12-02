@@ -31,28 +31,26 @@ public class AddAdminController {
     @FXML
     void initialize() {
         addButton.setOnAction(actionEvent -> {
-            String login = loginTF.getText();
-            String password = passwordTF.getText();
-            String message = "User,checkLogin," + login;
-            try {
-                Client.os.writeObject(message);
-                message = (String)Client.is.readObject();
-                if(message.equals("success"))
-                {
-                    String clientMessage = "User,addAdmin,"+ login + "," + password;
-                    try {
-                        Client.os.writeObject(clientMessage);
-                        message= (String) Client.is.readObject();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    if(message.equals("success"))MessageLabel.setText("Администратор добавлен");
+            String login = loginTF.getText().trim();
+            String password = passwordTF.getText().trim();
+            if(login!=null && password!=null) {
+                String message = "User,checkLogin," + login;
+                try {
+                    Client.os.writeObject(message);
+                    message = (String) Client.is.readObject();
+                    if (message.equals("success")) {
+                        String clientMessage = "User,addAdmin," + login + "," + password;
+                        try {
+                            Client.os.writeObject(clientMessage);
+                            message = (String) Client.is.readObject();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        if (message.equals("success")) MessageLabel.setText("Админ добавлен.");
+                    } else MessageLabel.setText("Пользователь с таким логином уже существует");
+                } catch (IOException |ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
-                else MessageLabel.setText("Пользователь с таким логином уже есть");
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
         });
     }

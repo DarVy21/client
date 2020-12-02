@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import Entity.BasketEntity;
+import Server.Entities.BasketEntity;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -100,17 +100,10 @@ public class ShowBasketController {
         try {
             String clientMessage = "Basket,ShowBasket,"+Client.getId_user();
             Client.os.writeObject(clientMessage);
-            ArrayList<String> list = (ArrayList<String>) Client.is.readObject();
+            List<BasketEntity> list=(List<BasketEntity>)Client.is.readObject();
             ObservableList<BasketEntity> baskets = FXCollections.observableArrayList();
-            for (int i = 0; i < list.size(); i++) {
-                BasketEntity basket = new BasketEntity();
-                String[] infoString = list.get(i).split(",", 4);
-                basket.setAmount(Integer.parseInt(infoString[1]));
-                basket.setName(infoString[0]);
-                basket.setPrice(Double.parseDouble(infoString[2]));
-                basket.setId(Integer.parseInt(infoString[3]));
+            for (BasketEntity basket :list)
                 baskets.add(basket);
-            }
             name.setCellValueFactory(new PropertyValueFactory<>("name"));
             price.setCellValueFactory(new PropertyValueFactory<>("price"));
             amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
