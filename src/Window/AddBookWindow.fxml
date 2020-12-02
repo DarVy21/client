@@ -20,7 +20,6 @@
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Роман" />
                     <String fx:value="Детектив" />
-                    <String fx:value="Драма" />
                     <String fx:value="Научные" />
                     <String fx:value="Утопия" />
                     <String fx:value="Антиутопия" />

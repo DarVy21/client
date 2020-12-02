@@ -52,6 +52,9 @@ public class AdminMainController {
         PromocodButton.setOnAction(actionEvent -> {
             openNewScene("/Window/AdminDiscountWindow.fxml");
         });
+        statisticsButton.setOnAction(actionEvent -> {
+            openNewScene("/Window/Statistics.fxml");
+        });
     }
 
     public void openNewScene(String window)
