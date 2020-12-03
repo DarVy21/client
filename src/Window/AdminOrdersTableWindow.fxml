@@ -26,6 +26,8 @@
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Подтвержден" />
+                    <String fx:value="Отправлен" />
+                    <String fx:value="Принят" />
                     <String fx:value="Отказано" />
                     <String fx:value="В обработке" />
                 </FXCollections>

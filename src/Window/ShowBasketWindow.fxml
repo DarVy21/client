@@ -21,6 +21,7 @@
         <TextField fx:id="deleteIdTF" layoutX="64.0" layoutY="338.0" prefHeight="25.0" prefWidth="74.0" promptText="id книги" />
         <Button fx:id="deleteBasketButton" layoutX="171.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Удалить" />
         <Button fx:id="OrderButton" layoutX="300.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Оформить заказ" />
-      <Label id="labelMessage" layoutX="138.0" layoutY="293.0" prefHeight="17.0" prefWidth="265.0" textFill="#ec0800" />
+      <Label id="labelMessage" layoutX="209.0" layoutY="293.0" prefHeight="17.0" prefWidth="265.0" textFill="#ec0800" />
+      <Button fx:id="saveButton" layoutX="64.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Записать в файл" />
     </children>
 </AnchorPane>

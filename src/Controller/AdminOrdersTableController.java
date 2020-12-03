@@ -58,6 +58,7 @@ public class AdminOrdersTableController {
         });
         changeButton.setOnAction(actionEvent -> {
             changeStatus();
+            showOrder();
         });
     }
 
@@ -73,6 +74,7 @@ public class AdminOrdersTableController {
         }
         if(message.equals("success")){
             MessageLabel.setText("Статус изменен.");
+
         }
         else MessageLabel.setText("Ошибка.");
 

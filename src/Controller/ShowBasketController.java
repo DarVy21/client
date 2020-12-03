@@ -1,6 +1,9 @@
 package Controller;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class ShowBasketController {
@@ -49,6 +53,8 @@ public class ShowBasketController {
     private Button backButton;
     @FXML
     private Button OrderButton;
+    @FXML
+    private Button saveButton;
 
     @FXML
     private Label labelMessage;
@@ -58,6 +64,9 @@ public class ShowBasketController {
         showBasket();
         backButton.setOnAction(actionEvent -> {
             openNewScene("/Window/ClientMainWindow.fxml");
+        });
+        saveButton.setOnAction(actionEvent -> {
+           saveToFile();
         });
         deleteBasketButton.setOnAction(actionEvent -> {
             String idBasket=deleteIdTF.getText().trim();
@@ -94,6 +103,34 @@ public class ShowBasketController {
                 openOrderDiscountWindow();
         });
 
+    }
+
+    public void saveToFile() {
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        String clientMessage = "Basket,ShowBasket,"+Client.getId_user();
+        try {
+            Client.os.writeObject(clientMessage);
+            List<BasketEntity> list=(List<BasketEntity>)Client.is.readObject();
+
+        fileChooser.setTitle("Сохранить в файл");
+        File file = fileChooser.showSaveDialog(stage);
+        if (file != null) {
+            try {
+                BufferedWriter outWriter = new BufferedWriter(new FileWriter(file));
+                for (BasketEntity basket :list) {
+                    outWriter.write(basket.toString());
+                    outWriter.newLine();
+                }
+                outWriter.close();
+                labelMessage.setText("Записано в файл!");
+            } catch (IOException e) {
+                labelMessage.setText("Ошибка записи в файл!");
+            }
+        }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void showBasket() {

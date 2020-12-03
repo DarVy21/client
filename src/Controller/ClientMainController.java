@@ -2,12 +2,18 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import Server.Entities.OrdersEntity;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class ClientMainController {
@@ -31,10 +37,14 @@ public class ClientMainController {
     private Button backButton;
     @FXML
     private Button PromocodButton;
+    @FXML
+    private ListView<String> notificationView;
+
 
     @FXML
     void initialize() {
 
+        showNotifications();
         backButton.setOnAction(actionEvent -> {
             openNewScene("/Window/LogInWindow.fxml");
         });
@@ -56,6 +66,25 @@ public class ClientMainController {
 
 
     }
+
+    public void showNotifications(){
+        String message="Order,showNotifications,"+Client.getId_user();
+        try {
+            Client.os.writeObject(message);
+            List<String> list = (List<String>) Client.is.readObject();
+            if (list.size()!=0) {
+                ObservableList<String> notlist = FXCollections.observableArrayList(list);
+                ListView<String> notifications = new ListView<>(notlist);
+                notificationView.setItems(notlist);
+            }
+            else  notificationView.setVisible(false);
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void openNewScene(String window)
     {
         Book.getScene().getWindow().hide();

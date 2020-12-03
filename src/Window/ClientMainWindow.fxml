@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClientMainController">
@@ -10,5 +12,8 @@
       <Button fx:id="HistoryOrder" layoutX="74.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Таблица заказов" />
       <Button fx:id="backButton" layoutX="346.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Назад" />
       <Button fx:id="PromocodButton" layoutX="278.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Промокоды" />
+      <ListView fx:id="notificationView" editable="true" layoutX="62.0" layoutY="195.0" opacity="1" prefHeight="96.0" prefWidth="190.0" styleClass="wrap">
+     </ListView>
+
    </children>
 </AnchorPane>
